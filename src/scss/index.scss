@@ -1,0 +1,36 @@
+@import './helpers/reset';
+@import './helpers/variables';
+@import './helpers/mixins';
+
+body {
+    font-family: $primary-fonts;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+        @media (max-width: 992px) {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
+html {
+    font-size: 16px;
+    @media (max-width: 992px) {
+        font-size: 16px;
+    }
+    @media (max-width: 480px) {
+        font-size: 14px;
+    }
+}
+
+@import './sections/main';

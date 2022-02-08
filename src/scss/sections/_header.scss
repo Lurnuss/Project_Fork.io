@@ -1,0 +1,210 @@
+.nav {
+  width: 100%;
+  @media (max-width: 993px) {
+    background-color: #27262A;
+  }
+
+  &__bg {
+  @media(max-width: 480px) {
+    background-color: #27262A;
+    width: 100%;
+    height: 102px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+}
+
+.menu{
+  display: grid;
+  grid-template-columns: max-content auto max-content max-content;
+  width: 100%;
+  color: $main-color;
+
+  @media (min-width: 993px) {
+    margin-top: 31px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  @media (max-width: 992px) {
+    grid-template-columns: max-content auto 145px;
+    padding-top: 23px;
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: max-content auto max-content auto max-content;
+    padding: 32px 10px 24px;
+    position: relative;
+  }
+
+  &__logo{
+    display: flex;
+    position: relative;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+    color: $main-color;
+    @media (max-width: 480px) {
+      width: 43px;
+      z-index: 2;
+    }
+    &:before{
+      margin-right: 17px;
+    content: url('../images/logo.png');
+      position: relative;
+  }
+    &:hover{
+      color: #FFFFFF;
+    }
+    &:hover:before{
+      content: url("../images/logo-hover.png");
+    }
+    & p {
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
+  }
+
+  &__list{
+    @include flex;
+    @media (min-width: 993px) {
+      grid-column-start: 3;
+    }
+    &-item{
+      margin-right: 48px;
+      line-height: 17px;
+      font-weight: bold;
+
+      &:last-child{
+        @media (max-width: 992px) {
+          margin-right: 0;
+        }
+      }
+
+      & a{
+        color: $main-color;
+        font-weight: bold ;
+        @media(max-width: 480px) {
+          display: block;
+          padding: 29px 0 21px 35px;
+          line-height: 26px;
+        }
+        }
+
+      @media(max-width: 480px){
+        margin-right: 0;
+        background-color: #333333;
+        width: 100%;
+        border-bottom: 3px solid #3B3B3B;
+        position: relative;
+        &:active:before,
+        &:focus:before{
+          position: absolute;
+          content: "";
+          width: 8px;
+          height: 53px;
+          background-color: $main-color;
+          left: 0;
+          top: 13px;
+        }
+      }
+
+      &:hover a{
+        color: #FFFFFF;
+      }
+    }
+
+
+    @media (max-width: 992px) and (min-width: 481px){
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      justify-content: center;
+      margin: 21px 0 18px;
+    }
+
+    @media (max-width: 480px){
+      position: absolute;
+      top: -500px;
+      z-index: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+  }
+
+
+  &__buy{
+    grid-column-start: 4;
+    height: max-content;
+    text-align: center;
+    display: block;
+    border-radius: 40px;
+    background-color: $main-color;
+    color: #FFFFFF;
+    font-weight: bold;
+    width: 145px;
+    padding: 11px 0;
+
+    @media (max-width: 992px) {
+      grid-column-start: 3;
+      }
+
+    @media (max-width: 480px){
+      width: 120px;
+      grid-column-start: 3;
+      grid-row-start: 1;
+      z-index: 2;
+    }
+
+    &:hover,
+    &:active{
+      background-color: #fff;
+      color: $main-color;
+    }
+    }
+}
+
+
+@media(max-width:480px){
+  .burger{
+    @include flex(center, flex-end);
+    flex-direction: column;
+    row-gap: 6px;
+    grid-column-start: 5;
+    margin-top: 8px;
+    cursor: pointer;
+    width: 26px;
+    height: 24px;
+    z-index: 2;
+
+    &__line{
+      width: 26px;
+      height: 3px;
+      background-color: #fff;
+      border-radius: 5px;
+
+      &:first-child{
+        width: 15px;
+      }
+    }
+  }
+
+  .menu__list.active{
+    flex-direction: column;
+    top: 102px;
+    align-items: flex-start;
+    transition: 0.5s;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .menu__list-item{
+    margin-right: 0;
+  }
+}

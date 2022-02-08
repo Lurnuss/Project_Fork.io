@@ -1,0 +1,60 @@
+.hero{
+  background-image: url(../images/nav-bg_desktop.png);
+  @media (max-width: 480px) {
+    background-image: url(../images/nav-bg_mob.png);
+  }
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 800px;
+  @media (max-width: 992px){
+    height: 682px;
+  }
+  z-index: -2;
+  &__text {
+    @include flex;
+    flex-direction: column;
+    padding-top: 183px;
+    gap: 19px;
+    @media (max-width: 992px){
+      padding-top: 69px;
+    }
+    @media (max-width: 480px) {
+      padding-top: 50px;
+    }
+    text-align: center;
+    & h1 {
+      color: #fff;
+      font-size: 82px;
+      line-height: 82px;
+      font-weight: bold;
+      @media (max-width: 992px){
+        font-size: 72px;
+      }
+      @media (max-width: 480px) {
+        font-size: 50px;
+      }
+    }
+
+    & p:nth-child(2) {
+      font-size: 30px;
+      line-height: 30px;
+      color: $main-color;
+      @media (max-width: 992px){
+        font-size: 24px;
+      }
+      @media (max-width: 480px) {
+        font-size: 18px;
+        text-transform: capitalize;
+      }
+    }
+
+    & p:last-child {
+      line-height: 16px;
+      color: #848E97;
+      @media (max-width: 992px){
+      font-size: 14px;
+    }
+    }
+  }
+}

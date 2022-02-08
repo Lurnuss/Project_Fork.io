@@ -1,0 +1,112 @@
+.descriptions{
+  @media(min-width: 993px){
+  background-color: #F4F4F4;
+    overflow: hidden;
+    padding-bottom: 33px;
+  }
+&__list{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 50px;
+  @media(min-width: 992px) {
+    padding-top: 95px;
+  }
+  @media(max-width: 992px) {
+    grid-template-columns: auto;
+    padding-top: 62px;
+  }
+  @media(max-width: 480px){
+    padding-top: 32px;
+  }
+
+    &-items{
+      display: flex;
+      flex-direction: column;
+      row-gap: 35px;
+      grid-row-start:1;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      @media(max-width: 992px){
+        row-gap: 60px;
+        grid-row-start:2
+      }
+    }
+  &-item{
+    @include flex;
+    column-gap: 23px;
+    @media(max-width: 480px){
+      display: block;
+    text-align: center;
+    }
+    &:nth-child(3) div img{
+      margin-left: 15px;
+    }
+
+    &:nth-child(4) div img{
+      margin-left: 10px;
+    }
+
+    & div:first-child{
+      width: 111px;
+      @media(max-width: 480px){
+        margin: 0 auto 23px;
+
+      }
+    }
+    & div:last-child{
+      @media(min-width: 993px){
+        max-width: 405px;
+      }
+      & p:first-child {
+        color: #323232;
+      }
+
+      & p:last-child {
+        margin-top: 16px;
+        color: #848E97;
+        line-height: 21px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-text{
+    color: $main-color;
+    font-size: 42px;
+    line-height: 44px;
+    margin-left: 22px;
+    margin-bottom: 20px;
+    @media(max-width: 1060px) and (min-width: 993px){
+    width: 400px;
+  }
+    @media (max-width: 992px) {
+      grid-row-start: 1;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 50px;
+    }
+  }
+
+  &-img{
+    grid-column-start: 2;
+    margin-right: -10px;
+
+
+    @media(max-width: 992px) {
+      margin-top: 76px;
+      grid-column-start: 1;
+      @include flex(flex-end);
+    }
+
+    @media(max-width: 480px){
+      margin-top: 64px;
+    }
+
+    & img{
+      @media(max-width: 992px){
+        max-width: 100%;
+      }
+    }
+  }
+}
+}

@@ -1,0 +1,97 @@
+.editor {
+  text-align: center;
+  margin-bottom: 70px;
+@media(max-width: 992px){
+  margin-bottom: 98px;
+}
+  @media(max-width: 480px){
+    margin-bottom: 88px;
+  }
+
+  &__button {
+    display: inline-block;
+    color: #fff;
+    padding: 23px 61px;
+    @media (max-width: 480px){
+      padding: 13px 29px;
+    }
+    border: 2px solid  #8D81AC;
+    border-radius: 40px;
+    background-color: $main-color;
+    transform: translate(0, -50%);
+
+    &:hover {
+      color: $main-color;
+      background-color: #fff;
+
+    }
+  }
+
+  &__text {
+    margin-top: -14px;
+
+
+    & p{
+      display:block;
+      margin: 0 auto;
+    }
+
+    & p:first-child {
+    color: #848E97;
+    font-size: 14px;
+  }
+
+  & p:nth-child(2) {
+    margin-top: 66px;
+    font-size: 54px;
+    line-height: 54px;
+    text-transform: uppercase;
+    @media (max-width: 992px){
+      font-size: 42px;
+      line-height: 42px;
+    }
+    @media (max-width: 480px){
+      font-size: 26px;
+      line-height: 26px;
+    }
+    color: #635C73;
+    font-weight: bold;
+  }
+
+  & p:last-child {
+    margin-top: 35px;
+    color: #323232;
+    font-size: 21px;
+    line-height: 32px;
+    max-width: 861px;
+    @media (max-width: 480px){
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+  &__links{
+    @include flex;
+    margin-top: 13px;
+    row-gap: 20px;
+    column-gap: 10px;
+    flex-wrap: wrap;
+
+    &-item{
+      @include flex;
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      & div{
+        @include flex;
+        background: linear-gradient(#fcfcfc, #eeeeef);
+        padding: 6px 10px;
+        border-right: 1px solid #d5d5d5;
+        gap: 3px;
+      }
+      & p{
+        padding: 0 7px;
+      }
+    }
+  }
+}
